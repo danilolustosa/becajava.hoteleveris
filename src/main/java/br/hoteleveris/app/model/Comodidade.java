@@ -16,22 +16,13 @@ public class Comodidade {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nome;
+	private String nome;	
 	
-	@ManyToMany
-    @JoinTable(name = "QuartoComodidade", 
-    inverseJoinColumns = @JoinColumn(name = "comodidadeId"),
-    joinColumns = @JoinColumn(name = "quartoId"))
-    Set<Quarto> quarto;
-	
-	
-	
-	public Set<Quarto> getQuarto() {
-		return quarto;
+	public Comodidade(Long id) {
+		super();
+		this.id = id;
 	}
-	public void setQuarto(Set<Quarto> quarto) {
-		this.quarto = quarto;
-	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -44,7 +35,5 @@ public class Comodidade {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
 
 }

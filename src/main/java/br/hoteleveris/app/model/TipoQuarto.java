@@ -14,6 +14,20 @@ public class TipoQuarto {
 	private String descricao;
 	private double valor;
 	
+	public TipoQuarto() {
+		
+	}
+	
+	public TipoQuarto(Long id) {
+		super();
+		this.id = id;
+	}	
+	
+	public TipoQuarto(String descricao, double valor) {
+		super();
+		this.descricao = descricao;
+		this.valor = valor;
+	}
 	
 	public Long getId() {
 		return id;
