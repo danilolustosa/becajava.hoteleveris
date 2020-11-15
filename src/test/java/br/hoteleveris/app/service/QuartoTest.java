@@ -1,4 +1,4 @@
-package br.hoteleveris.app.controller;
+package br.hoteleveris.app.service;
 
 import java.util.Random;
 
@@ -29,8 +29,8 @@ public class QuartoTest {
 
         BaseResponse response = service.inserir(request);
         
-        Assertions.assertEquals(response.getStatusCode(), 201);
-        Assertions.assertEquals(response.getMessage(), "Quarto inserido com sucesso");
+        Assertions.assertEquals(201, response.getStatusCode());
+        Assertions.assertEquals("Quarto inserido com sucesso", response.getMessage());
     }
 
     @Test
@@ -43,8 +43,23 @@ public class QuartoTest {
 
         BaseResponse response = service.inserir(request);
 
-        Assertions.assertEquals(response.getStatusCode(), 400);
-        Assertions.assertEquals(response.getMessage(), "Preencha o número do quarto");
+        Assertions.assertEquals(400, response.getStatusCode());
+        Assertions.assertEquals("Preencha o número do quarto", response.getMessage());
+    }
+    
+    @Test
+    void inserirSemSituacao() throws Exception {
+        QuartoRequest request = new QuartoRequest();
+        request.setAndar(13);
+        int noQuarto = this.getRandomNumberUsingInts(1,1000);
+        request.setNoQuarto(noQuarto);
+        //request.setSituacao("A");
+        request.setTipoQuartoId(new Long(1));
+
+        BaseResponse response = service.inserir(request);
+
+        Assertions.assertEquals(400, response.getStatusCode());
+        Assertions.assertEquals("Preencha a situação", response.getMessage());
     }
     
     

@@ -34,7 +34,7 @@ public class QuartoService {
 		if (!checkNoQuarto.isEmpty()) 
 			return new BaseResponse(400, "O número do quarto já existe");
 		
-		if (request.getSituacao() == "")
+		if (request.getSituacao() == "" || request.getSituacao() == null)
 			return new BaseResponse(400, "Preencha a situação");		
 		
 		TipoQuarto tipoQuarto = new TipoQuarto(request.getTipoQuartoId());	
