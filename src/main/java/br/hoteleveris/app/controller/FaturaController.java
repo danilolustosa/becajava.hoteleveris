@@ -21,8 +21,8 @@ public class FaturaController {
 	@PostMapping
 	public ResponseEntity inserir() {
 		try {
-			BaseResponse response = _service.inserir();
-			return ResponseEntity.status(response.getStatusCode()).body(response);
+			_service.inserir();
+			return ResponseEntity.status(200).body("Faturas inseridas com sucesso");
 		} catch (Exception e) {
 			return ResponseEntity.status(500).body("Erro genérico");
 		}		
