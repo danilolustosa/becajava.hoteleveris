@@ -41,7 +41,13 @@ public class FaturaService {
 		List<Ocupacao> lista = ocupacaoRepository.findBySituacao("N");		
 		
 		for (Ocupacao ocupacao : lista) {
-			double valor = ocupacao.getQuarto().getTipoQuarto().getValor() * ocupacao.getQtdeDiarias();
+			double valor = ocupacao
+					.getQuarto()
+					.getTipoQuarto()
+					.getValor() 
+					* 
+					ocupacao
+					.getQtdeDiarias();
 			
 			TransferenciaRequest transferencia = new TransferenciaRequest();
 			transferencia.setHashDestino(hashContaHotel);
