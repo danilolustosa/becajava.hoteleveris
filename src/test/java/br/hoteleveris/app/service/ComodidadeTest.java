@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import br.hoteleveris.app.request.ComodidadeRequest;
 import br.hoteleveris.app.response.BaseResponse;
+import br.hoteleveris.app.service.implement.ComodidadeService;
 
 @SpringBootTest
 public class ComodidadeTest {

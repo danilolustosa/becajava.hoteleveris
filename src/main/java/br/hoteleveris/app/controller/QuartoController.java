@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.hoteleveris.app.request.QuartoRequest;
 import br.hoteleveris.app.response.BaseResponse;
-import br.hoteleveris.app.service.QuartoService;
+import br.hoteleveris.app.service.implement.QuartoService;
 
 @RestController
 @RequestMapping("/quarto")

@@ -1,4 +1,4 @@
-package br.hoteleveris.app.service;
+package br.hoteleveris.app.service.implement;
 
 import java.util.List;
 

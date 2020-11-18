@@ -1,4 +1,4 @@
-package br.hoteleveris.app.service;
+package br.hoteleveris.app.service.implement;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
